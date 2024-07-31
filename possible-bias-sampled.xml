@@ -1,0 +1,145 @@
+<View>
+
+    <Text name="document_id" value="Document ID: $document_id"/>
+    <Text name="phrase" value="Phrase $phrase_index of $phrase_series"/>
+    <Text name="terms_count_total" value="Possible biased terms: $terms_count_total"/>
+
+
+    <Header value="Does the following job description contain any implicit bias language?"/>
+    <View style="padding-left:30px;;">
+        <Text name="text" value="$text"/>
+    </View>
+
+
+    <Choices name="bias" toName="text" choice="single-radio" showInline="true" required="true">
+        <Choice alias="yes" value="Yes" hotkey="y"/>
+        <Choice alias="no" value="No" hotkey="n"/>
+        <Choice alias="maybe" value="Maybe" hotkey="b"/>
+    </Choices>
+    <Choices name="sample" toName="text" choice="multiple" showInline="true">
+        <Choice alias="exlude" value="Exclude" hotkey="e"/>
+    </Choices>
+    <Choices name="human_category" toName="text" choice="multiple" showInline="true" required="true">
+        <Choice alias="age" value="Age" hotkey="a"/>
+        <Choice alias="disability" value="Disability" hotkey="d"/>
+        <Choice alias="feminine" value="Feminine" hotkey="f"/>
+        <Choice alias="general" value="General" hotkey="g"/>
+        <Choice alias="masculine" value="Masculine" hotkey="m"/>
+        <Choice alias="racial" value="Racial" hotkey="r"/>
+        <Choice alias="sexuality" value="Sexuality" hotkey="s"/>
+    </Choices>
+
+    <Header value="Age Analysis:"/>
+    <Collapse>
+        <Panel value="View $terms_count_age possible bias terms">
+            <View style="flex: 100%; margin-left: 1em">
+                <Header value="Terms:"/>
+                <Text name="terms_list_age" value="$terms_list_age"/>
+                <Header value="Reason:"/>
+                <Text name="reasons_list_age" value="$reasons_list_age"/>
+                <Header value="Suggestions:"/>
+                <Text name="suggestions_list_age" value="$suggestions_list_age"/>
+            </View>
+        </Panel>
+    </Collapse>
+    <TextArea name="age_analysis" toName="text" placeholder="Enter age analysis here ..." rows="1"/>
+
+    <Header value="Disability Analysis:"/>
+    <Collapse>
+        <Panel value="View $terms_count_disability possible bias terms">
+            <View style="flex: 100%; margin-left: 1em">
+                <Header value="Terms:"/>
+                <Text name="terms_list_disability" value="$terms_list_disability"/>
+                <Header value="Reason:"/>
+                <Text name="reasons_list_disability" value="$reasons_list_disability"/>
+                <Header value="Suggestions:"/>
+                <Text name="suggestions_list_disability" value="$suggestions_list_disability"/>
+            </View>
+        </Panel>
+    </Collapse>
+    <TextArea name="disability_analysis" toName="text" placeholder="Enter disability analysis here ..." rows="1"/>
+
+    <Header value="General Analysis:"/>
+    <Collapse>
+        <Panel value="View $terms_count_general possible bias terms">
+            <View style="flex: 100%; margin-left: 1em">
+                <Header value="Terms:"/>
+                <Text name="terms_list_general" value="$terms_list_general"/>
+                <Header value="Reason:"/>
+                <Text name="reasons_list_general" value="$reasons_list_general"/>
+                <Header value="Suggestions:"/>
+                <Text name="suggestions_list_general" value="$suggestions_list_general"/>
+            </View>
+        </Panel>
+    </Collapse>
+    <TextArea name="general_analysis" toName="text" placeholder="Enter general analysis here ..." rows="1"/>
+
+    <Header value="Feminine Analysis:"/>
+    <Collapse>
+        <Panel value="View $terms_count_feminine possible bias terms">
+            <View style="flex: 100%; margin-left: 1em">
+                <Header value="Terms:"/>
+                <Text name="terms_list_feminine" value="$terms_list_feminine"/>
+                <Header value="Reason:"/>
+                <Text name="reasons_list_feminine" value="$reasons_list_feminine"/>
+                <Header value="Suggestions:"/>
+                <Text name="suggestions_list_feminine" value="$suggestions_list_feminine"/>
+            </View>
+        </Panel>
+    </Collapse>
+    <TextArea name="feminine_analysis" toName="text" placeholder="Enter feminine analysis here ..." rows="1"/>
+
+    <Header value="Masculine Analysis:"/>
+    <Collapse>
+        <Panel value="View $terms_count_masculine possible bias terms">
+            <View style="flex: 100%; margin-left: 1em">
+                <Header value="Terms:"/>
+                <Text name="terms_list_masculine" value="$terms_list_masculine"/>
+                <Header value="Reason:"/>
+                <Text name="reasons_list_masculine" value="$reasons_list_masculine"/>
+                <Header value="Suggestions:"/>
+                <Text name="suggestions_list_masculine" value="$suggestions_list_masculine"/>
+            </View>
+        </Panel>
+    </Collapse>
+    <TextArea name="masculine_analysis" toName="text" placeholder="Enter masculine analysis here ..." rows="1"/>
+
+    <Header value="Racial Analysis:"/>
+    <Collapse>
+        <Panel value="View $terms_count_racial possible bias terms">
+            <View style="flex: 100%; margin-left: 1em">
+                <Header value="Terms:"/>
+                <Text name="terms_list_racial" value="$terms_list_racial"/>
+                <Header value="Reason:"/>
+                <Text name="reasons_list_racial" value="$reasons_list_racial"/>
+                <Header value="Suggestions:"/>
+                <Text name="suggestions_list_racial" value="$suggestions_list_racial"/>
+            </View>
+        </Panel>
+    </Collapse>
+    <TextArea name="racial_analysis" toName="text" placeholder="Enter racial analysis here ..." rows="1"/>
+
+    <Header value="Sexuality Analysis:"/>
+    <Collapse>
+        <Panel value="View $terms_count_sexuality possible bias terms">
+            <View style="flex: 100%; margin-left: 1em">
+                <Header value="Terms:"/>
+                <Text name="terms_list_sexuality" value="$terms_list_sexuality"/>
+                <Header value="Reason:"/>
+                <Text name="reasons_list_sexuality" value="$reasons_list_sexuality"/>
+                <Header value="Suggestions:"/>
+                <Text name="suggestions_list_sexuality" value="$suggestions_list_sexuality"/>
+            </View>
+        </Panel>
+    </Collapse>
+    <TextArea name="sexuality_analysis" toName="text" placeholder="Enter sexuality analysis here ..." rows="1"/>
+
+    <Header value="Additional Comments:"/>
+    <TextArea name="comments" toName="text" placeholder="Enter any comments here ..." rows="1"/>
+
+    <Collapse>
+        <Panel value="Original Posting (HTML)">
+            <HyperText name="html" value="$html" inline="true"/>
+        </Panel>
+    </Collapse>
+</View>
